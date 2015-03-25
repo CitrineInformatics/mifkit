@@ -7,25 +7,32 @@ from mif_object import MifObject
 class Sample(MifObject):
     """
     Class to store information about a sample.
+    
+    
+    The following fields must be defined:
+        material
+        measurement
     """
     
-    def __init__(self, material = None, measurement = [], reference = [], experimenter = [], extra_field = {}):
+    def __init__(self,                \
+                 material     = None, \
+                 measurement  = None, \
+                 reference    = None, \
+                 experimenter = None  \
+    ):
         """
         Constructor.
         
         :param material: Material that the sample is made from.
         :type material: Material object.
         :param measurement: List of measurements on the sample.
-        :type measurement: List of Measurement objects.
+        :type measurement: Single Measurement object or list of Measurement objects.
         :param reference: List of references where information about the sample is published.
-        :type reference: List of Reference objects.
+        :type reference: Single Reference object or list of Reference objects.
         :param experimenter: List of people that worked on the material.
-        :type experimenter: List of Person objects.
-        :param extra_field: Dictionary of non-supported fields to save.
-        :type extra_field: Dictionary with values that can be converted directly to Json (strings, numbers,
-                           dictionaries, or lists of those types).
+        :type experimenter: Single Person object or list of Person objects.
         """
-        super(Sample, self).__init__(extra_field)
+        super(Sample, self).__init__()
         self.material     = material
         self.measurement  = measurement
         self.reference    = reference

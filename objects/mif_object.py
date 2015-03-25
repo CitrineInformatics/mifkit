@@ -8,15 +8,11 @@ class MifObject(object):
     not officially supported.
     """
     
-    def __init__(self, extra_field = {}):
+    def __init__(self):
         """
         Constructor.
-        
-        :param extra_field: Dictionary of non-supported fields to save.
-        :type extra_field: Dictionary with values that can be converted directly to Json (strings, numbers,
-                           dictionaries, or lists of those types).
         """
-        self.extra_field = extra_field
+        pass
     
     def to_json_type(self):
         """
@@ -24,10 +20,8 @@ class MifObject(object):
         
         :returns: Object that can be serialized as json with the content of this object.
         """
-        res = { self._to_camel_case(i): self.__dict__[i] for i in self.extra_field }
-        res.update( { self._to_camel_case(i): self._convert_to_json_type(self.__dict__[i]) \
-                for i in self.__dict__ if i is not self.extra_field } )
-        return res
+        return { self._to_camel_case(i): self._convert_to_json_type(self.__dict__[i]) \
+                 for i in self.__dict__ if self.__dict__[i] is not None }
     
     def _convert_to_json_type(self, obj):
         """
