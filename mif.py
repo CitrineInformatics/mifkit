@@ -34,7 +34,7 @@ class Mif(object):
     def _get_samples(self):
         """
         """
-        return [ { 'sample': i.to_json_type() for i in self.sample } ] if isinstance(self.sample, list) else \
+        return [ { 'sample': i.to_json_type() } for i in self.sample ] if isinstance(self.sample, list) else \
                [ { 'sample': self.sample.to_json_type() } ] if self.sample != None else                      \
                []
     
