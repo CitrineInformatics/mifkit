@@ -17,6 +17,7 @@ class Reference(MifObject):
                  isbn        = None, \
                  issn        = None, \
                  url         = None, \
+                 title       = None, \
                  publisher   = None, \
                  journal     = None, \
                  volume      = None, \
@@ -38,6 +39,8 @@ class Reference(MifObject):
         :type issn: String or number.
         :param url: URL of the reference.
         :type url: String.
+        :param title: Title of the reference.
+        :type title: String.
         :param publisher: Publisher of the reference.
         :type publisher: String.
         :param journal: Journal in which the reference was published.

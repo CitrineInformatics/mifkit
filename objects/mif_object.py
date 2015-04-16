@@ -4,8 +4,7 @@ Definition of the base units of a general Mif object.
 
 class MifObject(object):
     """
-    Base class for all Mif objects. All Mif objects contain an extra_field dictionary that stores fields that are
-    not officially supported.
+    Base class for all Mif objects.
     """
     
     def __init__(self):
@@ -20,22 +19,27 @@ class MifObject(object):
         
         :returns: Object that can be serialized as json with the content of this object.
         """
-        return { self._to_camel_case(i): self._convert_to_json_type(self.__dict__[i]) \
+        return { MifObject._to_camel_case(i): MifObject._convert_to_json_type(self.__dict__[i]) \
                  for i in self.__dict__ if self.__dict__[i] is not None }
     
-    def _convert_to_json_type(self, obj):
+    @staticmethod
+    def _convert_to_json_type(obj):
         """
         Convert obj to an object that is suitable for dumping as json. This function attempts to treat obj as
         a MifObject and otherwise returns obj.
         
         :returns: Input obj as an object that can be dumped as json.
         """
-        try:
-            return obj.to_json_type()
-        except Exception:
-            return obj
+        if isinstance(obj, list):
+            return [ MifObject._convert_to_json_type(i) for i in obj ]
+        else:
+            try:
+                return obj.to_json_type()
+            except Exception:
+                return obj
     
-    def _to_camel_case(self, snake_case_string):
+    @staticmethod
+    def _to_camel_case(snake_case_string):
         """
         Convert a string from snake case to camel case.
         
