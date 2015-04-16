@@ -46,4 +46,5 @@ class Mif(object):
         :returns: JSON-encoded string with the content of this object.
         """
         json_object = self.to_json_type()
-        return json.dumps(json_object) if indent is None else json.dumps(json_object, indent = indent)
+        return json.dumps(json_object, ensure_ascii = False).encode('utf8') if indent is None else \
+               json.dumps(json_object, indent = indent, ensure_ascii = False).encode('utf8'))
