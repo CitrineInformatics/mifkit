@@ -13,13 +13,13 @@ class Measurement(MifObject):
         property
     """
     
-    def __init__(self,                \
-                 property     = None, \
-                 data_type    = None, \
-                 method       = None, \
-                 condition    = None, \
-                 reference    = None, \
-                 experimenter = None  \
+    def __init__(self,             \
+                 property  = None, \
+                 data_type = None, \
+                 method    = None, \
+                 condition = None, \
+                 reference = None, \
+                 contact   = None  \
     ):
         """
         Constructor.
@@ -34,13 +34,13 @@ class Measurement(MifObject):
         :type method: Single Value object or list of Value objects.
         :param reference: References in which information about the measurement is published.
         :type reference: Single Reference object or list of Reference objects.
-        :param experimenter: List of people that worked on the measurement.
-        :type experimenter: Single Person object or list of Person objects.
+        :param contact: List of people that worked on the measurement.
+        :type contact: Single Person object or list of Person objects.
         """
         super(Measurement, self).__init__()
-        self.property     = property
-        self.data_type    = data_type
-        self.method       = method
-        self.condition    = condition
-        self.reference    = reference
-        self.experimenter = experimenter
+        self.property  = property
+        self.data_type = data_type
+        self.method    = method
+        self.condition = condition
+        self.reference = reference
+        self.contact   = contact
