@@ -19,7 +19,8 @@ class Measurement(MifObject):
                  method    = None, \
                  condition = None, \
                  reference = None, \
-                 contact   = None  \
+                 contact   = None, \
+                 license   = None  \
     ):
         """
         Constructor.
@@ -36,6 +37,8 @@ class Measurement(MifObject):
         :type reference: Single Reference object or list of Reference objects.
         :param contact: List of people that worked on the measurement.
         :type contact: Single Person object or list of Person objects.
+        :param license: One of more licenses to apply to the sample.
+        :type license: Single string or list of strings.
         """
         super(Measurement, self).__init__()
         self.property  = property
@@ -44,3 +47,4 @@ class Measurement(MifObject):
         self.condition = condition
         self.reference = reference
         self.contact   = contact
+        self.license   = license

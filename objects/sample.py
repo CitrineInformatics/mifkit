@@ -14,11 +14,12 @@ class Sample(MifObject):
         measurement
     """
     
-    def __init__(self,                \
+    def __init__(self,               \
                  material    = None, \
                  measurement = None, \
                  reference   = None, \
-                 contact     = None  \
+                 contact     = None, \
+                 license     = None  \
     ):
         """
         Constructor.
@@ -31,9 +32,12 @@ class Sample(MifObject):
         :type reference: Single Reference object or list of Reference objects.
         :param contact: List of people that worked on the material.
         :type contact: Single Person object or list of Person objects.
+        :param license: One of more licenses to apply to the sample.
+        :type license: Single string or list of strings.
         """
         super(Sample, self).__init__()
         self.material    = material
         self.measurement = measurement
         self.reference   = reference
         self.contact     = contact
+        self.license     = license
