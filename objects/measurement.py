@@ -13,14 +13,14 @@ class Measurement(MifObject):
         property
     """
     
-    def __init__(self,             \
-                 property  = None, \
-                 data_type = None, \
-                 method    = None, \
-                 condition = None, \
-                 reference = None, \
-                 contact   = None, \
-                 license   = None  \
+    def __init__(self,
+                 property  = None,
+                 data_type = None,
+                 method    = None,
+                 condition = None,
+                 reference = None,
+                 contact   = None,
+                 license   = None
     ):
         """
         Constructor.

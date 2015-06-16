@@ -12,9 +12,9 @@ class Pages(MifObject):
         start
     """
     
-    def __init__(self,               \
-                 start       = None, \
-                 end         = None  \
+    def __init__(self,
+                 start = None,
+                 end   = None
     ):
         """
         Constructor.

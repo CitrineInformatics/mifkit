@@ -10,8 +10,8 @@ class Mif(object):
     Class to store the high level objects in a Mif and to write those values.
     """
     
-    def __init__(self,         \
-                 sample = None \
+    def __init__(self,
+                 sample = None
     ):
         """
         Constructor.

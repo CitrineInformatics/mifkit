@@ -19,7 +19,7 @@ class MifObject(object):
         
         :returns: Object that can be serialized as json with the content of this object.
         """
-        return { MifObject._to_camel_case(i): MifObject._convert_to_json_type(self.__dict__[i]) \
+        return { MifObject._to_camel_case(i): MifObject._convert_to_json_type(self.__dict__[i])
                  for i in self.__dict__ if self.__dict__[i] is not None }
     
     @staticmethod

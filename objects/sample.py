@@ -14,12 +14,12 @@ class Sample(MifObject):
         measurement
     """
     
-    def __init__(self,               \
-                 material    = None, \
-                 measurement = None, \
-                 reference   = None, \
-                 contact     = None, \
-                 license     = None  \
+    def __init__(self,
+                 material    = None,
+                 measurement = None,
+                 reference   = None,
+                 contact     = None,
+                 license     = None
     ):
         """
         Constructor.

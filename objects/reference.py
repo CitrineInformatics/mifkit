@@ -12,21 +12,21 @@ class Reference(MifObject):
         None
     """
     
-    def __init__(self,               \
-                 doi         = None, \
-                 isbn        = None, \
-                 issn        = None, \
-                 url         = None, \
-                 title       = None, \
-                 publisher   = None, \
-                 journal     = None, \
-                 volume      = None, \
-                 issue       = None, \
-                 year        = None, \
-                 pages       = None, \
-                 author      = None, \
-                 editor      = None, \
-                 reference   = None  \
+    def __init__(self,
+                 doi       = None,
+                 isbn      = None,
+                 issn      = None,
+                 url       = None,
+                 title     = None,
+                 publisher = None,
+                 journal   = None,
+                 volume    = None,
+                 issue     = None,
+                 year      = None,
+                 pages     = None,
+                 author    = None,
+                 editor    = None,
+                 reference = None
     ):
         """
         Constructor.

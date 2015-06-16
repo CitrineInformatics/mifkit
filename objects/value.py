@@ -13,12 +13,12 @@ class Value(MifObject):
         exactly one of scalar, vector, or matrix
     """
     
-    def __init__(self, \
-                 name   = None, \
-                 scalar = None, \
-                 vector = None, \
-                 matrix = None, \
-                 units  = None  \
+    def __init__(self,
+                 name   = None,
+                 scalar = None,
+                 vector = None,
+                 matrix = None,
+                 units  = None
     ):
         """
         Constructor.

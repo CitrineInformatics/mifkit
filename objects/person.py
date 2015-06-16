@@ -12,10 +12,10 @@ class Person(MifObject):
         At least one of name, email, or orcid
     """
     
-    def __init__(self,               \
-                 name        = None, \
-                 email       = None, \
-                 orcid       = None  \
+    def __init__(self,
+                 name  = None,
+                 email = None,
+                 orcid = None
     ):
         """
         Constructor.

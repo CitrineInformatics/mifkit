@@ -12,9 +12,9 @@ class Name(MifObject):
         family
     """
     
-    def __init__(self,               \
-                 given       = None, \
-                 family      = None  \
+    def __init__(self,
+                 given  = None,
+                 family = None
     ):
         """
         Constructor.
