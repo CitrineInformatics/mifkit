@@ -6,4 +6,4 @@ from person      import Person
 from reference   import Reference
 from sample      import Sample
 from value       import Value
-from scalar        import Item
+from scalar      import Scalar
