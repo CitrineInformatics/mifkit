@@ -26,11 +26,11 @@ class Value(MifObject):
         :param name: Name of the value.
         :type name: String.
         :param scalar: Scalar value.
-        :type scalar: Single string or number or a list of strings or numbers.
+        :type scalar: Single/list of strings, numbers, or Scalar objects.
         :param vector: Vector value.
-        :type vector: Single list of strings or numbers or a list of lists of strings or numbers.
+        :type vector: Single/list of lists of strings, numbers, or Scalar objects.
         :param matrix: Matrix value.
-        :type matrix: Single list of lists of strings or numbers or a list of lists of lists of strings or numbers.
+        :type matrix: Single/list of lists of lists of strings, numbers, or Scalar objects.
         :param units: Units of the value.
         :type units: String.
         """

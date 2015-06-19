@@ -3,7 +3,6 @@ Definitions of classes and method used to build a Mif object.
 """
 
 import json
-from objects.sample import Sample
 
 class Mif(object):
     """
