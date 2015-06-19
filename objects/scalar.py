@@ -14,22 +14,22 @@ class Scalar(MifObject):
 
     def __init__(self,
                  value       = None,
-                 min         = None,
-                 max         = None,
+                 minimum     = None,
+                 maximum     = None,
                  uncertainty = None):
         """
         Constructor
 
         :param value: Exact value for the point.
         :type value: Number or string with the value of the point.
-        :param min: Minimum value for the point.
-        :type min: Number or string with the minimum value of the point.
-        :param max: Maximum value for the point.
-        :type max: Number or string with the maximum value of the point.
+        :param minimum: Minimum value for the point.
+        :type minimum: Number or string with the minimum value of the point.
+        :param maximum: Maximum value for the point.
+        :type maximum: Number or string with the maximum value of the point.
         :param uncertainty: Isotropic uncertainty for the point.
         :type uncertainty: Number or string with the uncertainty of the point.
         """
         self.value       = value
-        self.min         = min
-        self.max         = max
+        self.minimum     = minimum
+        self.maximum     = maximum
         self.uncertainty = uncertainty
