@@ -1,49 +1,49 @@
-"""
-Definitions of classes and method used to build a Mif object.
-"""
-
 import json
+from util.case import to_snake_case
+
 
 class Mif(object):
     """
-    Class to store the high level objects in a Mif and to write those values.
+    Class to store the high level objects in a MIF.
     """
     
-    def __init__(self,
-                 sample = None
-    ):
+    def __init__(self, objects=None):
         """
         Constructor.
         
-        :param sample: Samples to sample.
-        :type sample: Sample object or list of Sample objects.
+        :param objects: Mif objects to save.
+        :type objects: List of MifObject objects.
         """
         super(Mif, self).__init__()
-        self.sample = sample
-    
-    def to_json_type(self):
-        """
-        Convert this object into one that can be dumped as json.
-        
-        :returns: Object or list that can be dumped as json.
-        """
-        res = self._get_samples()
-        return res
-    
-    def _get_samples(self):
-        """
-        """
-        return [ { 'sample': i.to_json_type() } for i in self.sample ] if isinstance(self.sample, list) else \
-               [ { 'sample': self.sample.to_json_type() } ] if self.sample != None else                      \
-               []
-    
-    def to_json(self, indent = None):
+        self.objects = objects
+
+    def serialize(self, indent=None):
         """
         Convert this object into a JSON-encoded string.
-        
+
         :param indent: Indent to apply to the json string.
+        :type indent: Integer
+
         :returns: JSON-encoded string with the content of this object.
         """
-        json_object = self.to_json_type()
-        return json.dumps(json_object, ensure_ascii = False) if indent is None else \
-               json.dumps(json_object, indent = indent, ensure_ascii = False)
+        json_object = self._to_mif_array()
+        return json.dumps(json_object, ensure_ascii=False) if indent is None else \
+            json.dumps(json_object, indent=indent, ensure_ascii=False)
+
+    def _to_mif_array(self):
+        """
+        Convert this object into one that can be dumped as json.
+
+        :returns: Object or list that can be dumped as json.
+        """
+        res = self._get_mif_objects()
+        return res[0] if len(res) == 1 else res
+    
+    def _get_mif_objects(self):
+        """
+        Get the list of objects stored by this object in a format ready for dumping to json.
+
+        :returns: List of objects with proper MIF formatting applied.
+        """
+        objects = self.objects if isinstance(self.objects, list) else self.objects if self.objects is not None else []
+        return [{to_snake_case(i.__name__): i.as_mif_dictionary()} for i in objects]

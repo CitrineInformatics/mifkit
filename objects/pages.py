@@ -1,8 +1,5 @@
-"""
-Definitions for storing the pages of a reference.
-"""
-
 from mif_object import MifObject
+
 
 class Pages(MifObject):
     """
@@ -12,18 +9,16 @@ class Pages(MifObject):
         start
     """
     
-    def __init__(self,
-                 start = None,
-                 end   = None
-    ):
+    def __init__(self, start=None, end=None):
         """
         Constructor.
         
         :param start: Starting page.
         :type start: String or number.
+
         :param end: Ending page.
         :type end: String or number.
         """
         super(Pages, self).__init__()
         self.start = start
-        self.end   = end
+        self.end = end

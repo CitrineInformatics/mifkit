@@ -1,8 +1,5 @@
-"""
-Definitions for storing the name of a person.
-"""
-
 from mif_object import MifObject
+
 
 class Name(MifObject):
     """
@@ -12,18 +9,16 @@ class Name(MifObject):
         family
     """
     
-    def __init__(self,
-                 given  = None,
-                 family = None
-    ):
+    def __init__(self, given=None, family=None):
         """
         Constructor.
         
         :param given: Given name.
         :type given: String.
+
         :param family: Family name.
         :type family: String.
         """
         super(Name, self).__init__()
-        self.given  = given
+        self.given = given
         self.family = family
