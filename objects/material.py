@@ -1,4 +1,5 @@
 from mif_object import MifObject
+from value import Value
 
 
 class Material(MifObject):
@@ -23,6 +24,19 @@ class Material(MifObject):
         :type condition: Single Value object or list of Value objects.
         """
         super(Material, self).__init__()
+        self._condition = None
         self.chemical_formula = chemical_formula
         self.common_name = common_name
         self.condition = condition
+
+    @property
+    def condition(self):
+        return self._condition
+
+    @condition.setter
+    def condition(self, value):
+        self._condition = self._get_object(Value, value)
+
+    @condition.deleter
+    def condition(self):
+        del self._condition

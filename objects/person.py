@@ -1,4 +1,5 @@
 from mif_object import MifObject
+from name import Name
 
 
 class Person(MifObject):
@@ -23,6 +24,19 @@ class Person(MifObject):
         :type orcid: String.
         """
         super(Person, self).__init__()
+        self._name = None
         self.name = name
         self.email = email
         self.orcid = orcid
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = self._get_object(Name, value)
+
+    @name.deleter
+    def name(self):
+        del self._name

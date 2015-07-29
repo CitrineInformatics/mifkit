@@ -1,4 +1,5 @@
 from mif_object import MifObject
+from scalar import Scalar
 
 
 class Value(MifObject):
@@ -30,8 +31,48 @@ class Value(MifObject):
         :type units: String.
         """
         super(Value, self).__init__()
+        self._scalar = None
+        self._vector = None
+        self._matrix = None
+
         self.name = name
         self.scalar = scalar
         self.vector = vector
         self.matrix = matrix
         self.units = units
+
+    @property
+    def scalar(self):
+        return self._scalar
+
+    @scalar.setter
+    def scalar(self, value):
+        self._scalar = self._get_object(Scalar, value)
+
+    @scalar.deleter
+    def scalar(self):
+        del self._scalar
+
+    @property
+    def vector(self):
+        return self._vector
+
+    @vector.setter
+    def vector(self, value):
+        self._vector = self._get_object(Scalar, value)
+
+    @vector.deleter
+    def vector(self):
+        del self._vector
+
+    @property
+    def matrix(self):
+        return self._matrix
+
+    @matrix.setter
+    def matrix(self, value):
+        self._matrix = self._get_object(Scalar, value)
+
+    @matrix.deleter
+    def matrix(self):
+        del self._matrix

@@ -1,4 +1,5 @@
 from util.case import to_camel_case
+from util.case import keys_to_snake_case
 
 
 class MifObject(object):
@@ -33,5 +34,23 @@ class MifObject(object):
             return [MifObject._convert_to_mif_dictionary(i) for i in obj]
         elif hasattr(obj, 'as_mif_dictionary'):
             return obj.as_mif_dictionary()
+        else:
+            return obj
+
+    @staticmethod
+    def _get_object(class_, obj):
+        """
+        Helper function that returns an object, or if it is a dictionary, initializes it from class_.
+
+        :param class_: Class to use to instantiate object.
+
+        :param obj: Object to process.
+
+        :return: MifObject object or a list of MifObject objects.
+        """
+        if isinstance(obj, list):
+            return [MifObject._get_object(class_, i) for i in obj]
+        elif isinstance(obj, dict):
+            return class_(**keys_to_snake_case(obj))
         else:
             return obj
