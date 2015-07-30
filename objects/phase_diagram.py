@@ -82,7 +82,7 @@ class PhaseDiagram(MifObject):
     @label.deleter
     def label(self):
         del self._label
-    
+
     @property
     def phase(self):
         return self._phase
