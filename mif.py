@@ -93,3 +93,28 @@ def _dict_to_mif_object(obj):
     if not isinstance(value, dict):
         raise ValueError(key + ' must have a value that is a dictionary')
     return getattr(objects, to_capitalized_camel_case(key))(**keys_to_snake_case(value))
+
+
+class Mif(object):
+    """
+    Legacy class. Don't use this. It's only here to prevent old scripts from breaking.
+    """
+
+    def __init__(self, sample=None):
+        """
+        Constructor.
+
+        :param sample: Samples to sample.
+        :type sample: Sample object or list of Sample objects.
+        """
+        super(Mif, self).__init__()
+        self.sample = sample
+
+    def to_json(self, indent = None):
+        """
+        Convert this object into a JSON-encoded string.
+
+        :param indent: Indent to apply to the json string.
+        :returns: JSON-encoded string with the content of this object.
+        """
+        return json.dumps(self.sample) if indent is None else json.dumps(self.sample, indent=indent)
