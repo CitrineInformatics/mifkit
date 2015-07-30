@@ -35,7 +35,7 @@ class Measurement(MifObject):
         :param contact: List of people that worked on the measurement.
         :type contact: Single Person object or list of Person objects.
 
-        :param license: One of more licenses to apply to the sample.
+        :param license: One of more licenses to apply to the measurement.
         :type license: Single string or list of strings.
         """
         super(Measurement, self).__init__()

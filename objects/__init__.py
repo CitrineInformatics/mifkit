@@ -1,3 +1,7 @@
+from line import Line
+from phase import Phase
+from phase_diagram import PhaseDiagram
+from point import Point
 from material import Material
 from measurement import Measurement
 from name import Name
