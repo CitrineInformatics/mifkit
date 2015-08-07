@@ -60,6 +60,18 @@ def loads(s, **kwargs):
     return _to_mif_object(json.loads(s, **kwargs))
 
 
+def from_dict(obj):
+    """
+    Convert content in a list or dictionary to
+
+    :param obj: Python object to convert to MifObject type.
+    :type obj: List or dictionary.
+
+    :return: Single MifObject-type object or list of MifObject-type objects.
+    """
+    return _to_mif_object(obj)
+
+
 def _to_mif_object(obj):
     """
     Convert a dictionary or list of a single or multiple MifObject objects.
