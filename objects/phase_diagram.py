@@ -29,8 +29,8 @@ class PhaseDiagram(MifObject):
         :param label: List of labels to add to the phase diagram (not including labels at vertices).
         :type label: Single Point object or list of Point objects.
 
-        :param phase: List of phases that appear within the phase diagram. This is used when addition information about
-        a phase is know besides a name or label.
+        :param phase: List of phases that appear within the phase diagram. This is used when additional information
+        about a phase is know besides a name or label.
         :type phase: Single Sample object or list of Sample objects.
 
         :param reference: References for the phase diagram.

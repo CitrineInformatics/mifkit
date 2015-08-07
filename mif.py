@@ -5,31 +5,31 @@ from util.case import keys_to_snake_case
 from util.case import to_capitalized_camel_case
 
 
-def dump(mif, fp, **kwargs):
+def dump(mif_object, fp, **kwargs):
     """
     Convert this object into a JSON-encoded string and save it in a file.
 
-    :param mif: Object to serialize.
-    :type mif: Single MifObject-type object or list of MifObject-type objects.
+    :param mif_object: Object to serialize.
+    :type mif_object: Single MifObject-type object or list of MifObject-type objects.
 
     :param fp: Object to write the serialization to.
     :type fp: File-like object supporting .write() method.
 
     :param kwargs: Any options available to json.dump().
     """
-    json.dump(mif, fp, cls=MifEncoder, **kwargs)
+    json.dump(mif_object, fp, cls=MifEncoder, **kwargs)
 
 
-def dumps(mif, **kwargs):
+def dumps(mif_object, **kwargs):
     """
     Convert this object into a JSON-encoded string.
 
-    :param mif: Object to serialize.
-    :type mif: Single MifObject-type object or list of MifObject-type objects.
+    :param mif_object: Object to serialize.
+    :type mif_object: Single MifObject-type object or list of MifObject-type objects.
 
     :param kwargs: Any options available to json.dumps().
     """
-    json.dumps(mif, cls=MifEncoder, **kwargs)
+    json.dumps(mif_object, cls=MifEncoder, **kwargs)
 
 
 def load(fp, **kwargs):
