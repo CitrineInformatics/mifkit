@@ -45,6 +45,7 @@ class PhaseDiagram(MifObject):
         :param data_type: Type of the data to add.
         :type data_type: String (either "Experimental" or "Computational")
         """
+        super(PhaseDiagram, self).__init__()
         self._boundary = None
         self._label = None
         self._phase = None

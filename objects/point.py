@@ -19,5 +19,6 @@ class Point(MifObject):
         :param coordinate: Coordinate of the point.
         :return: List of numbers defining the coordinate.
         """
+        super(Point, self).__init__()
         self.label = label
         self.coodinate = coordinate

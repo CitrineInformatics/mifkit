@@ -34,7 +34,6 @@ class Value(MifObject):
         self._scalar = None
         self._vector = None
         self._matrix = None
-
         self.name = name
         self.scalar = scalar
         self.vector = vector

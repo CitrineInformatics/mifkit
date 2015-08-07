@@ -21,6 +21,7 @@ class Phase(MifObject):
         :param coordinate: Coordinate of the phase in the phase diagram.
         :type coordinate: List of numbers defining the coordinate.
         """
+        super(Phase, self).__init__()
         self._sample = None
         self.sample = sample
         self.coordinate = coordinate
