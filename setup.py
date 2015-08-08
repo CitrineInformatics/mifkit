@@ -6,7 +6,4 @@ setup(name='Mifkit',
       description='Tools for working with the Materials Information File (MIF).',
       author='Kyle Michel',
       author_email='kyle@citrine.io',
-      packages=find_packages(),
-      install_requires=[
-          'requests'
-      ])
+      packages=find_packages())
