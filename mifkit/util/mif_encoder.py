@@ -1,5 +1,5 @@
 import json
-from util.case import to_snake_case
+from mifkit.util.case import to_snake_case
 
 
 class MifEncoder(json.JSONEncoder):

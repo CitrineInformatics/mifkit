@@ -11,7 +11,7 @@ class Value(MifObject):
         exactly one of scalar, vector, or matrix
     """
     
-    def __init__(self, name=None, scalar=None, vector=None, matrix=None, units=None):
+    def __init__(self, name=None, scalar=None, vector=None, matrix=None, units=None, **kwargs):
         """
         Constructor.
         
@@ -30,7 +30,7 @@ class Value(MifObject):
         :param units: Units of the value.
         :type units: String.
         """
-        super(Value, self).__init__()
+        super(Value, self).__init__(**kwargs)
         self._scalar = None
         self._vector = None
         self._matrix = None

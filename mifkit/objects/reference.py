@@ -12,7 +12,7 @@ class Reference(MifObject):
     """
     
     def __init__(self, doi=None, isbn=None, issn=None, url=None, title=None, publisher=None, journal=None, volume=None,
-                 issue=None, year=None, pages=None, author=None, editor=None, reference=None):
+                 issue=None, year=None, pages=None, author=None, editor=None, reference=None, **kwargs):
         """
         Constructor.
         
@@ -58,7 +58,7 @@ class Reference(MifObject):
         :param reference: List of nested references.
         :type reference: Single Reference object or list of Reference objects.
         """
-        super(Reference, self).__init__()
+        super(Reference, self).__init__(**kwargs)
         self._pages = None
         self._author = None
         self._editor = None

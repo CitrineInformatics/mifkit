@@ -15,7 +15,7 @@ class PhaseDiagram(MifObject):
     """
 
     def __init__(self, vertex=None, boundary=None, label=None, phase=None, reference=None, contact=None,
-                 license=None, data_type=None):
+                 license=None, data_type=None, **kwargs):
         """
         Constructor.
 
@@ -45,7 +45,7 @@ class PhaseDiagram(MifObject):
         :param data_type: Type of the data to add.
         :type data_type: String (either "Experimental" or "Computational")
         """
-        super(PhaseDiagram, self).__init__()
+        super(PhaseDiagram, self).__init__(**kwargs)
         self._boundary = None
         self._label = None
         self._phase = None

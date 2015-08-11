@@ -14,7 +14,7 @@ class Sample(MifObject):
         measurement
     """
     
-    def __init__(self, material=None, measurement=None, reference=None, contact=None, license=None):
+    def __init__(self, material=None, measurement=None, reference=None, contact=None, license=None, **kwargs):
         """
         Constructor.
         
@@ -33,7 +33,7 @@ class Sample(MifObject):
         :param license: One of more licenses to apply to the sample.
         :type license: Single string or list of strings.
         """
-        super(Sample, self).__init__()
+        super(Sample, self).__init__(**kwargs)
         self._material = None
         self._measurement = None
         self._reference = None

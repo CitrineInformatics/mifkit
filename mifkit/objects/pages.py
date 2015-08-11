@@ -9,7 +9,7 @@ class Pages(MifObject):
         start
     """
     
-    def __init__(self, start=None, end=None):
+    def __init__(self, start=None, end=None, **kwargs):
         """
         Constructor.
         
@@ -19,6 +19,6 @@ class Pages(MifObject):
         :param end: Ending page.
         :type end: String or number.
         """
-        super(Pages, self).__init__()
+        super(Pages, self).__init__(**kwargs)
         self.start = start
         self.end = end

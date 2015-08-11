@@ -10,7 +10,7 @@ class Material(MifObject):
         chemical_formula or common_name
     """
     
-    def __init__(self, chemical_formula=None, common_name=None, condition=None):
+    def __init__(self, chemical_formula=None, common_name=None, condition=None, **kwargs):
         """
         Constructor.
         
@@ -23,7 +23,7 @@ class Material(MifObject):
         :param condition: Conditions of the material.
         :type condition: Single Value object or list of Value objects.
         """
-        super(Material, self).__init__()
+        super(Material, self).__init__(**kwargs)
         self._condition = None
         self.chemical_formula = chemical_formula
         self.common_name = common_name

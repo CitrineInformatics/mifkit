@@ -9,7 +9,7 @@ class Scalar(MifObject):
         value and/or min and and/or max
     """
 
-    def __init__(self, value=None, minimum=None, maximum=None, uncertainty=None):
+    def __init__(self, value=None, minimum=None, maximum=None, uncertainty=None, **kwargs):
         """
         Constructor
 
@@ -25,7 +25,7 @@ class Scalar(MifObject):
         :param uncertainty: Isotropic uncertainty for the point.
         :type uncertainty: Number or string with the uncertainty of the point.
         """
-        super(Scalar, self).__init__()
+        super(Scalar, self).__init__(**kwargs)
         self.value = value
         self.minimum = minimum
         self.maximum = maximum

@@ -10,7 +10,7 @@ class Person(MifObject):
         At least one of name, email, or orcid
     """
     
-    def __init__(self, name=None, email=None, orcid=None):
+    def __init__(self, name=None, email=None, orcid=None, **kwargs):
         """
         Constructor.
         
@@ -23,7 +23,7 @@ class Person(MifObject):
         :param orcid: ORCID identifier of the person.
         :type orcid: String.
         """
-        super(Person, self).__init__()
+        super(Person, self).__init__(**kwargs)
         self._name = None
         self.name = name
         self.email = email

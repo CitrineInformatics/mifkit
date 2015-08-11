@@ -11,7 +11,7 @@ class Phase(MifObject):
         coordinate
     """
 
-    def __init__(self, sample=None, coordinate=None):
+    def __init__(self, sample=None, coordinate=None, **kwargs):
         """
         Constructor.
 
@@ -21,7 +21,7 @@ class Phase(MifObject):
         :param coordinate: Coordinate of the phase in the phase diagram.
         :type coordinate: List of numbers defining the coordinate.
         """
-        super(Phase, self).__init__()
+        super(Phase, self).__init__(**kwargs)
         self._sample = None
         self.sample = sample
         self.coordinate = coordinate

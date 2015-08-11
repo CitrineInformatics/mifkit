@@ -9,7 +9,7 @@ class Name(MifObject):
         family
     """
     
-    def __init__(self, given=None, family=None):
+    def __init__(self, given=None, family=None, **kwargs):
         """
         Constructor.
         
@@ -19,6 +19,6 @@ class Name(MifObject):
         :param family: Family name.
         :type family: String.
         """
-        super(Name, self).__init__()
+        super(Name, self).__init__(**kwargs)
         self.given = given
         self.family = family

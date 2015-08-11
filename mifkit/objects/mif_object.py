@@ -1,5 +1,5 @@
-from util.case import to_camel_case
-from util.case import keys_to_snake_case
+from mifkit.util.case import to_camel_case
+from mifkit.util.case import keys_to_snake_case
 
 
 class MifObject(object):
@@ -7,11 +7,12 @@ class MifObject(object):
     Base class for all MIF objects.
     """
     
-    def __init__(self):
+    def __init__(self, **kwargs):
         """
         Constructor.
         """
-        pass
+        for i in kwargs.keys():
+            setattr(self, i, kwargs[i])
     
     def as_mif_dictionary(self):
         """

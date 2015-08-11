@@ -9,7 +9,7 @@ class Line(MifObject):
         coordinate
     """
 
-    def __init__(self, label=None, coordinate=None):
+    def __init__(self, label=None, coordinate=None, **kwargs):
         """
         Constructor.
 
@@ -19,6 +19,6 @@ class Line(MifObject):
         :param coordinate: Coordinates of points on the line (in the order they should be connected).
         :type coordinate: List of lists of numbers, with each sub-list representing a coordinate.
         """
-        super(Line, self).__init__()
+        super(Line, self).__init__(**kwargs)
         self.label = label
         self.coordinate = coordinate

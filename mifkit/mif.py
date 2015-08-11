@@ -1,8 +1,8 @@
 import json
 import objects
-from util.mif_encoder import MifEncoder
-from util.case import keys_to_snake_case
-from util.case import to_capitalized_camel_case
+from mifkit.util.mif_encoder import MifEncoder
+from mifkit.util.case import keys_to_snake_case
+from mifkit.util.case import to_capitalized_camel_case
 
 
 def dump(mif_object, fp, **kwargs):
@@ -122,7 +122,7 @@ class Mif(object):
         super(Mif, self).__init__()
         self.sample = sample
 
-    def to_json(self, indent = None):
+    def to_json(self, indent=None):
         """
         Convert this object into a JSON-encoded string.
 

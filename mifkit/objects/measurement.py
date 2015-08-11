@@ -13,7 +13,7 @@ class Measurement(MifObject):
     """
     
     def __init__(self, property=None, data_type=None, method=None, condition=None, reference=None, contact=None,
-                 license=None):
+                 license=None, **kwargs):
         """
         Constructor.
         
@@ -38,7 +38,7 @@ class Measurement(MifObject):
         :param license: One of more licenses to apply to the measurement.
         :type license: Single string or list of strings.
         """
-        super(Measurement, self).__init__()
+        super(Measurement, self).__init__(**kwargs)
         self._property = None
         self._condition = None
         self._reference = None

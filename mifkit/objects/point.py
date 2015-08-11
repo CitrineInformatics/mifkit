@@ -9,7 +9,7 @@ class Point(MifObject):
         coordinate
     """
 
-    def __init__(self, label=None, coordinate=None):
+    def __init__(self, label=None, coordinate=None, **kwargs):
         """
         Constructor.
 
@@ -19,6 +19,6 @@ class Point(MifObject):
         :param coordinate: Coordinate of the point.
         :return: List of numbers defining the coordinate.
         """
-        super(Point, self).__init__()
+        super(Point, self).__init__(**kwargs)
         self.label = label
         self.coodinate = coordinate
