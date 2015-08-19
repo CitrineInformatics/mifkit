@@ -28,6 +28,8 @@ class MifObject(object):
         """
         Convert obj to a dictionary with formatting appropriate for a MIF. This function attempts to treat obj as
         a MifObject and otherwise returns obj.
+
+        :param obj: Object to convert to a dictionary.
         
         :returns: Input obj as an object that can be dumped as json.
         """

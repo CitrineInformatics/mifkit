@@ -11,7 +11,6 @@ class Sample(MifObject):
 
     The following fields must be defined:
         material
-        measurement
     """
     
     def __init__(self, material=None, measurement=None, reference=None, contact=None, license=None, **kwargs):

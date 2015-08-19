@@ -98,4 +98,3 @@ class Measurement(MifObject):
     @property.deleter
     def property(self):
         del self._property
-
