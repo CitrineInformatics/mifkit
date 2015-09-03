@@ -4,14 +4,14 @@ Tools to serialize and deserialize to and from the [MIF](http://citrineinformati
 
 # Installation
 
-To install the citrination_client package:
+To install the mifkit package:
 
 ```shell
-$ git clone git@github.com:CitrineInformatics/python-citrination-client.git
-$ cd python-citrination-client
+$ git clone git@github.com:CitrineInformatics/mifkit.git
+$ cd mifkit
 $ python setup.py install
 ```
 
-# Using This Client
+# Using This Package
 
-A detailed discussion of the citrination API and usage are available at [http://citrineinformatics.github.io/api-documentation](http://citrineinformatics.github.io/api-documentation).
+A detailed discussion of the MIF schema and usage are available at [http://citrineinformatics.github.io/mif-documentation](http://citrineinformatics.github.io/mif-documentation).
