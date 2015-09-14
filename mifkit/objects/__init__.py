@@ -3,6 +3,7 @@ from phase import Phase
 from phase_diagram import PhaseDiagram
 from point import Point
 from material import Material
+from composition import Composition
 from measurement import Measurement
 from name import Name
 from pages import Pages

@@ -1,4 +1,5 @@
 from mif_object import MifObject
+from composition import Composition
 from value import Value
 
 
@@ -10,7 +11,7 @@ class Material(MifObject):
         chemical_formula or common_name
     """
     
-    def __init__(self, chemical_formula=None, common_name=None, condition=None, **kwargs):
+    def __init__(self, chemical_formula=None, common_name=None, composition=None, condition=None, **kwargs):
         """
         Constructor.
         
@@ -20,13 +21,18 @@ class Material(MifObject):
         :param common_name: Common name of the material.
         :type common_name: String.
 
+        :param composition: Composition of the material.
+        :type composition: Single Composition object or list of Composition objects.
+
         :param condition: Conditions of the material.
         :type condition: Single Value object or list of Value objects.
         """
         super(Material, self).__init__(**kwargs)
+        self._composition = None
         self._condition = None
         self.chemical_formula = chemical_formula
         self.common_name = common_name
+        self.composition = composition
         self.condition = condition
 
     @property
@@ -40,3 +46,15 @@ class Material(MifObject):
     @condition.deleter
     def condition(self):
         del self._condition
+
+    @property
+    def composition(self):
+        return self._composition
+
+    @composition.setter
+    def composition(self, value):
+        self._composition = self._get_object(Composition, value)
+
+    @composition.deleter
+    def composition(self):
+        del self._composition
