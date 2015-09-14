@@ -2,7 +2,7 @@ from mif_object import MifObject
 
 
 class Composition(MifObject):
-    """
+    """ 
     Class to store information about the composition of a material.
 
     The following fields must be defined:
