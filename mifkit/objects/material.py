@@ -19,7 +19,7 @@ class Material(MifObject):
         :type chemical_formula: String.
 
         :param common_name: Common name of the material.
-        :type common_name: String.
+        :type common_name: Single string or list of strings.
 
         :param composition: Composition of the material.
         :type composition: Single Composition object or list of Composition objects.
