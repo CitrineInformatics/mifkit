@@ -1,6 +1,6 @@
 from mif_object import MifObject
 from value import Value
-from sample import Sample
+from component import Component
 from person import Person
 from reference import Reference
 from measurement import Measurement
@@ -11,16 +11,16 @@ class System(MifObject):
     Class to store information about a system of materials.
 
     The following fields must be defined:
-        sample
+        component
     """
 
-    def __init__(self, sample=None, condition=None, measurement=None, reference=None, contact=None,
+    def __init__(self, component=None, condition=None, measurement=None, reference=None, contact=None,
                  license=None, **kwargs):
         """
         Constructor.
 
-        :param sample: List of samples in the system.
-        :type sample: Single Sample object or list of Sample objects.
+        :param component: List of components in the system.
+        :type component: Single Component object or list of Component objects.
 
         :param condition: List of conditions of the system.
         :type condition: Single Value object or list of Value objects.
@@ -38,12 +38,12 @@ class System(MifObject):
         :type license: Single string or list of strings.
         """
         super(System, self).__init__(**kwargs)
-        self._sample = None
+        self._component = None
         self._condition = None
         self._measurement = None
         self._reference = None
         self._contact = None
-        self.sample = sample
+        self.component = component
         self.condition = condition
         self.measurement = measurement
         self.reference = reference
@@ -51,16 +51,16 @@ class System(MifObject):
         self.license = license
 
     @property
-    def sample(self):
-        return self._sample
+    def component(self):
+        return self._component
 
-    @sample.setter
-    def sample(self, value):
-        self._sample = self._get_object(Sample, value)
+    @component.setter
+    def component(self, value):
+        self._component = self._get_object(Component, value)
 
-    @sample.deleter
-    def sample(self):
-        del self._sample
+    @component.deleter
+    def component(self):
+        del self._component
 
     @property
     def condition(self):
