@@ -14,10 +14,13 @@ class System(MifObject):
         component
     """
 
-    def __init__(self, component=None, condition=None, measurement=None, reference=None, contact=None,
+    def __init__(self, system_type=None, component=None, condition=None, measurement=None, reference=None, contact=None,
                  license=None, **kwargs):
         """
         Constructor.
+
+        :param system_type: Description of the type of the system. For example, "ionic liquid".
+        :type system_type: String
 
         :param component: List of components in the system.
         :type component: Single Component object or list of Component objects.
@@ -43,6 +46,7 @@ class System(MifObject):
         self._measurement = None
         self._reference = None
         self._contact = None
+        self.system_type = system_type
         self.component = component
         self.condition = condition
         self.measurement = measurement
