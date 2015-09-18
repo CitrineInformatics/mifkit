@@ -1,7 +1,4 @@
 from mif_object import MifObject
-
-
-from mif_object import MifObject
 from sample import Sample
 
 
