@@ -10,7 +10,6 @@ class Component(MifObject):
     Class to store information about a component of a system of materials.
 
     The following fields must be defined:
-        label
         sample
     """
 
