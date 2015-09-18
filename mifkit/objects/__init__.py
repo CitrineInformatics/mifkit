@@ -14,3 +14,4 @@ from sample import Sample
 from value import Value
 from scalar import Scalar
 from system import System
+from component import Component
