@@ -18,6 +18,6 @@ $ cd mifkit
 $ python setup.py install
 ```
 
-# Using This Package
+# Use
 
 A detailed discussion of the MIF schema and usage are available at [http://citrineinformatics.github.io/mif-documentation](http://citrineinformatics.github.io/mif-documentation).
