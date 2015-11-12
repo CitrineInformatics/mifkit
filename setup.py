@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='Mifkit',
-      version='1.0.0',
+      version='1.0.1',
       url='http://github.com/CitrineInformatics/mifkit',
       description='Tools for working with the Materials Information File (MIF).',
       author='Kyle Michel',

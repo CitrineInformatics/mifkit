@@ -12,7 +12,8 @@ class Material(MifObject):
         chemical_formula or common_name
     """
     
-    def __init__(self, chemical_formula=None, common_name=None, composition=None, id=None, condition=None, **kwargs):
+    def __init__(self, chemical_formula=None, common_name=None, composition=None, id=None, cif=None,
+                 condition=None, **kwargs):
         """
         Constructor.
         
@@ -28,6 +29,9 @@ class Material(MifObject):
         :param id: One or more identifiers for the material.
         :type id: One or more Id objects.
 
+        :param cif: Content of a CIF file containing information about the material.
+        :type cif: String.
+
         :param condition: Conditions of the material.
         :type condition: Single Value object or list of Value objects.
         """
@@ -39,6 +43,7 @@ class Material(MifObject):
         self.common_name = common_name
         self.composition = composition
         self.id = id
+        self.cif = cif
         self.condition = condition
 
     @property
