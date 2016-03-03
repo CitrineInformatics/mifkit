@@ -17,7 +17,7 @@ def dump(mif_object, fp, **kwargs):
 
     :param kwargs: Any options available to json.dump().
     """
-    json.dump(mif_object, fp, cls=MifEncoder, **kwargs)
+    return json.dump(mif_object, fp, cls=MifEncoder, **kwargs)
 
 
 def dumps(mif_object, **kwargs):
@@ -29,7 +29,7 @@ def dumps(mif_object, **kwargs):
 
     :param kwargs: Any options available to json.dumps().
     """
-    json.dumps(mif_object, cls=MifEncoder, **kwargs)
+    return json.dumps(mif_object, cls=MifEncoder, **kwargs)
 
 
 def load(fp, **kwargs):
